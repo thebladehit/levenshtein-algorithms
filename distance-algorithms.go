@@ -1,5 +1,24 @@
 package main
 
+func LevenshteinDistanceExponential(a, b string) int {
+	if a == "" {
+		return len(b)
+	}
+	if b == "" {
+		return len(a)
+	}
+
+	x := LevenshteinDistanceExponential(a[1:], b) + 1
+	y := LevenshteinDistanceExponential(a, b[1:]) + 1
+
+	z := LevenshteinDistanceExponential(a[1:], b[1:])
+	if a[0] != b[0] {
+		z++
+	}
+
+	return min(x, y, z)
+}
+
 func LevenshteinDistanceFullMatrix(a, b string) int {
 	m := len(a)
 	n := len(b)
