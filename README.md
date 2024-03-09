@@ -45,6 +45,12 @@ go test -bench .
 ### Results
 We use different length of input data in order to analyze the performance of the algorithms on different string lengths.
 
+## Graphics
+
+![With exponential](./img/graphic1.png)
+
+![Without exponential](./img/graphic.png)
+
 **Extra short string (0 symbols)**
 
 ![Extra short](./img/extrashort.png)
